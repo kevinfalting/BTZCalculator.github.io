@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <p>How many years did you enlist for?</p>
+            <select id="years">
+                <option value="4">4 Years</option>
+                <option value="6" selected="true">6 Years</option>
+            </select>
+            <br><br><br>
+            <p>When did you enter the Air Force?</p>
+            <input type="date" name="enlistmentDate" id="enlistmentDate" value="">
+            <br><br><br>
+            <p>When did you sew on A1C?</p>
+            <input type="date" name="a1cDate" id="a1cDate" value="">
+            <br><br><br>
+            <button type="button" onclick="calculate()">Calculate</button>
+        </div>
+        <div class="col">
+            <h3>Projected Promotion Dates</h3>
+            <p>Your BTZ board will be <span class="importantInfo" id="btzBoardDate"></span></p>
+            <p>You will sew on Senior Airman Below The Zone <span class="importantInfo" id="sraBTZSewOnDate"></span></p>
+            <p>If you don't get BTZ, you will sew on SrA <span class="importantInfo" id="sraSewOnDate"></span></p>
+        </div>
+    </div>
+</div>
