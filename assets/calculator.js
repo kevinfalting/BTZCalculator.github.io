@@ -29,7 +29,7 @@ function calculate() {
         sraBTZSewOnDate.innerHTML = tig20.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig20);
     } else {
-        alert("Oops! There's been a problem.\nPlease email kevin.falting@us.af.mil");
+        alert("Oops! There's been a problem.\nPlease email kevin.falting@gmail.com");
     }
 }
 
