@@ -20,6 +20,11 @@ function calculate() {
         btzBoardDate.innerHTML = calculateBoardDate(moment(a1cDate));
         sraBTZSewOnDate.innerHTML = moment(a1cDate).add(22, "M").format("MMMM Do, YYYY");
         sraSewOnDate.innerHTML = moment(a1cDate).add(28, "M").format("MMMM Do, YYYY");
+    } else if (years == 4) {
+        // TODO: add logic for calculating a 4 year enlistee
+        alert("Oops! Haven't coded this one yet. Standby!")
+    } else {
+        console.error("There was a selection other than 4 or 6 on the number of years enlisted.")
     }
 }
 
