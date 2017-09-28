@@ -28,8 +28,9 @@ function calculate() {
         sraSewOnDate.innerHTML = tig20.format("MMMM Do, YYYY");
         sraBTZSewOnDate.innerHTML = tig20.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig20);
+    } else {
+        alert("Oops! There's been a problem.\nPlease email kevin.falting@us.af.mil");
     }
-
 }
 
 // returns the month of the quarter prior to the month they would sew on BTZ
