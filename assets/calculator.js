@@ -29,7 +29,7 @@ function calculate() {
         sraBTZSewOnDate.innerHTML = tig20.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig20);
     } else {
-        alert("Oops! There's been a problem.\nPlease email kevin.falting@gmail.com");
+        alert("Oops! There's been a problem.\nPlease email kevinfalting@gmail.com and let him know the date you enlisted and the date you sewed on A1C.");
     }
 }
 
