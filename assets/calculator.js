@@ -20,16 +20,24 @@ function calculate() {
     var tig20 = moment(a1cDate).add(20, "M");
     var tig28 = moment(a1cDate).add(28, "M");
 
-    if (tis36 >= tig28) {
+    console.log("36 mo TIS: "+ tis36.format("MMMM Do, YYYY"));
+    console.log("20 mo TIG: "+ tig20.format("MMMM Do, YYYY"));
+    console.log("28 mo TIG: "+ tig28.format("MMMM Do, YYYY"));
+
+    if (tig28 <= tis36) {
         sraSewOnDate.innerHTML = tig28.format("MMMM Do, YYYY");
         sraBTZSewOnDate.innerHTML = tig28.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig28);
-    } else if (tis36 <= tig20) {
+    } else if (tig20 <= tis36) {
+        sraSewOnDate.innerHTML = tis36.format("MMMM Do, YYYY");
+        sraBTZSewOnDate.innerHTML = tis36.subtract(6, "M").format("MMMM Do, YYYY");
+        btzBoardDate.innerHTML = calculateBoardDate(tis36);
+    } else if (tis36 < tig20) {
         sraSewOnDate.innerHTML = tig20.format("MMMM Do, YYYY");
         sraBTZSewOnDate.innerHTML = tig20.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig20);
     } else {
-        alert("Oops! There's been a problem.\nPlease email kevinfalting@gmail.com and let him know the date you enlisted and the date you sewed on A1C.");
+        alert("Oops! Something went wrong calculating your dates. Please email kevinfalting@gmail.com to have it corrected.");
     }
 }
 
