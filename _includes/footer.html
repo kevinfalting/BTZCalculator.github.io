@@ -37,6 +37,24 @@
   </div>
   
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  <script src="/assets/jquery/external/jquery/jquery.js"></script>
+  <script src="/assets/jquery/jquery-ui.js"></script>
   <script src="/assets/moment.js"></script>
   <script src="/assets/calculator.js"></script>
+
+  <script>
+    (function() {
+      var elem = document.createElement('input');
+      elem.setAttribute('type', 'date');
+ 
+      if ( elem.type === 'text' ) {
+    
+        $('#enlistmentDate').datepicker();
+        $('#a1cDate').datepicker();
+        
+      }
+    })();
+  </script>
+
 </footer>
