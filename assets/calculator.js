@@ -1,8 +1,8 @@
 
 // on page load, set up values
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("enlistmentDate").value = moment().format("YYYY-MM-DD");
-    document.getElementById("a1cDate").value = moment().format("YYYY-MM-DD");
+    document.getElementById("enlistmentDate").value = moment().subtract(1,"y").format("YYYY-MM-DD");
+    document.getElementById("a1cDate").value = moment().subtract(1,"y").format("YYYY-MM-DD");
 }, false);
 
 function calculate() {
