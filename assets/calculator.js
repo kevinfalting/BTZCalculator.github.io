@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function calculate() {
 
+    // reset error
+    document.getElementById("error").innerHTML = "";
+
     // gather all of the important elements on the page
     var enlistmentDate = document.getElementById("enlistmentDate").value;
     var a1cDate = document.getElementById("a1cDate").value;
@@ -20,11 +23,21 @@ function calculate() {
     var tig20 = moment(a1cDate).add(20, "M");
     var tig28 = moment(a1cDate).add(28, "M");
 
-    console.log("36 mo TIS: "+ tis36.format("MMMM Do, YYYY"));
+    console.log("\n\n36 mo TIS: "+ tis36.format("MMMM Do, YYYY"));
     console.log("20 mo TIG: "+ tig20.format("MMMM Do, YYYY"));
     console.log("28 mo TIG: "+ tig28.format("MMMM Do, YYYY"));
 
-    if (tig28 <= tis36) {
+    // Check for date order
+    // Check for invalid date entry format
+    // Check if TIG at 28 mo is before TIS at 36 mo
+    // Check if TIG at 20 mo is at or before TIS at 36 mo
+    // Check if TIG at 20 mo is after TIS at 36 mo
+    // Display an error if nothing else works
+    if (moment(a1cDate) < moment(enlistmentDate)) {
+        document.getElementById("error").innerHTML = "You cannot sew on A1C before your Enlistment Date.";
+    } else if(tis36.format("MMMM Do, YYYY") == "Invalid date" || tig20.format("MMMM Do, YYYY") == "Invalid date") {
+        document.getElementById("error").innerHTML = "Oops, make sure you typed in the date correctly.\nFormat: YYYY-MM-DD";
+    } else if (tig28 <= tis36) {
         sraSewOnDate.innerHTML = tig28.format("MMMM Do, YYYY");
         sraBTZSewOnDate.innerHTML = tig28.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig28);
@@ -37,7 +50,7 @@ function calculate() {
         sraBTZSewOnDate.innerHTML = tig20.subtract(6, "M").format("MMMM Do, YYYY");
         btzBoardDate.innerHTML = calculateBoardDate(tig20);
     } else {
-        alert("Oops! Something went wrong calculating your dates. Please email kevinfalting@gmail.com to have it corrected.");
+        document.getElementById("error").innerHTML = "Oops! Something went wrong calculating your dates. Please send a screen shot to kevinfalting@gmail.com to have it corrected.";
     }
 }
 
