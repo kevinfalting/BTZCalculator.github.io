@@ -17,4 +17,4 @@ The source code for this site is here: [https://github.com/BTZCalculator/BTZCalc
 
 Hope this was helpful!
 
-[Stay cool](https://youtu.be/Cfl-XGbd2KU).
+[Stay cool](https://www.youtube.com/watch?v=YsufMtUOXtI).

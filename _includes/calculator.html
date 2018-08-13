@@ -3,21 +3,40 @@
         <div class="col">
             <p>When did you enter the Air Force?</p>
             <input type="date" name="enlistmentDate" id="enlistmentDate" value="yyyy-mm-dd">
-            <br><br><br>
+            <br>
+            <br>
+            <br>
             <p>
-                What is your date of rank for A1C?<br>
+                What is your date of rank for A1C?
+                <br>
                 <span style='color: grey; font-size: 0.75em;'>If you don't know, check your SURF or vMPF.</span>
             </p>
             <input type="date" name="a1cDate" id="a1cDate" value="yyyy-mm-dd">
-            <br><br><br>
+            <br>
+            <br>
+            <br>
             <div id="error"></div>
             <button type="button" onclick="calculate()">Calculate</button>
         </div>
         <div class="col">
             <h3>Projected Promotion Dates</h3>
-            <p>Your BTZ board will be <span class="importantInfo" id="btzBoardDate"></span></p>
-            <p>You will sew on Senior Airman Below The Zone <span class="importantInfo" id="sraBTZSewOnDate"></span></p>
-            <p>If you don't get BTZ, you will sew on SrA <span class="importantInfo" id="sraSewOnDate"></span></p>
+            <p>Your BTZ board will be
+                <span class="importantInfo" id="btzBoardDate"></span>
+            </p>
+            <p>You will sew on Senior Airman Below The Zone
+                <span class="importantInfo" id="sraBTZSewOnDate"></span>
+            </p>
+            <p>If you don't get BTZ, you will sew on SrA
+                <span class="importantInfo" id="sraSewOnDate"></span>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <p>Want to know more dates? Check out the
+                <a href="https://usafcareerdates.netlify.com/">USAF Career Dates Calculator</a>. It calculates a lot more and works for all enlisted ranks. It's currently
+                in beta, so help us double-check our results by inputting your information!</p>
         </div>
     </div>
 </div>
