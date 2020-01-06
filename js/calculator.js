@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("enlistmentDate").value = moment().subtract(1,"y").format("YYYY-MM-DD");
     document.getElementById("a1cDate").value = moment().subtract(1,"y").format("YYYY-MM-DD");
+    calculate();
 }, false);
 
 function calculate() {
@@ -36,7 +37,7 @@ function calculate() {
     if (moment(a1cDate) < moment(enlistmentDate)) {
         document.getElementById("error").innerHTML = "You cannot sew on A1C before your Enlistment Date.";
     } else if(tis36.format("MMMM Do, YYYY") == "Invalid date" || tig20.format("MMMM Do, YYYY") == "Invalid date") {
-        document.getElementById("error").innerHTML = "Oops, make sure you typed in the date correctly.\nFormat: YYYY-MM-DD";
+        document.getElementById("error").innerHTML = "Oops, make sure you typed in the date correctly.\nFormat: mm/dd/yyyy";
     } else if (tig28 <= tis36) {
         sraSewOnDate.innerHTML = tig28.format("MMMM Do, YYYY");
         sraBTZSewOnDate.innerHTML = tig28.subtract(6, "M").format("MMMM Do, YYYY");
