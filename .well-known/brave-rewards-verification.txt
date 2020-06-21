@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: btzcalculator.com
+Token: 991708f1210e2f9b5781fdedb30dd97a0f022a8c6af8ef4606e9070be6690ea9
