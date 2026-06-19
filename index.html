@@ -2,92 +2,83 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>USAF BTZ Calculator</title>
   <meta name="description" content="Use this calculator to figure out when you are eligible for BTZ.">
   <meta name="author" content="Kevin Falting">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Apply a saved theme choice before first paint to avoid a flash.
+       If nothing is saved, the page follows the OS preference (CSS). -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      } catch (e) {}
+    })();
+  </script>
 
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row" style="text-align: center;">
-      <div class="column">
-        <h1>USAF BTZ Calculator</h1>
-        <p style="margin-bottom: 0;">A calculator for BTZ promotions.</p>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="five columns offset-by-one">
+  <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+
+  <main class="container">
+
+    <header class="page-header">
+      <h1>USAF BTZ Calculator</h1>
+      <p class="subtitle">A calculator for BTZ promotions.</p>
+    </header>
+
+    <div class="panels">
+
+      <section class="card form-card">
         <label for="enlistmentDate">When did you enter the Air Force?</label>
         <input id="enlistmentDate" type="date">
-        <label for="a1cDate">What is your date of rank for A1C?</br><span style='color: grey; font-size: 0.75em;'>If you don't know, check your SURF or vMPF.</span></label>
+
+        <label for="a1cDate">What is your date of rank for A1C?
+          <span class="hint">If you don't know, check your SURF or vMPF.</span>
+        </label>
         <input id="a1cDate" type="date">
-        <div id="error"></div>
+
+        <p id="error" class="error" role="alert"></p>
         <button type="button" id="calculateButton">Calculate</button>
-      </div>
-      <div class="five columns">
-        <h5>Projected Promotion Dates</h5>
+      </section>
+
+      <section class="card results-card">
+        <h2>Projected Promotion Dates</h2>
         <p>Your BTZ board will be<br><span class="importantInfo" id="btzBoardDate"></span></p>
         <p>You will sew on Senior Airman Below The Zone<br><span class="importantInfo" id="sraBTZSewOnDate"></span></p>
         <p>If you don't get BTZ, you will sew on SrA<br><span class="importantInfo" id="sraSewOnDate"></span></p>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="ten columns offset-by-one">
-        <p>This site was made in the spirit of <a href="https://github.com/BTZCalculator/BTZCalculator.github.io">open source</a> hosted on <a href="https://github.com/">Github</a> and uses <a href="http://getskeleton.com/">Skeleton</a> for styling. You can stalk me on <a href="https://www.linkedin.com/in/kevinfalting/">LinkedIn</a>. <a href="https://www.youtube.com/watch?v=xCISDpKuaIE">Stay cool.</a></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="three columns offset-by-one">
-        <p>Please direct any questions or comments to: <a href="mailto:kevinfalting@gmail.com">kevinfalting@gmail.com</a></p>
-        <p>Or you can <a href="https://github.com/kevinfalting/BTZCalculator.github.io/issues">file an issue</a> on Github to let me know what can be improved. 👍</p>
-      </div>
-      <div class="six columns offset-by-one">
-        <p>Where did I get the information for the calculator?<br>Well... I read the AFI, yo. <a href="https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf">AFI 36-2502</a>.</p>
-        <p>Also, some bases have their own supplement to the AFI, which may alter the rules in some cases. You can find those supplements <a href="https://www.e-publishing.af.mil/Product-Index/#/?view=search&keyword=AFI36-2502&isObsolete=false">here</a>. <a href="https://github.com/kevinfalting/BTZCalculator.github.io/issues">Open an issue</a> if your base uses a different calculation and we'll get it incorporated into this calculator.</p>
-      </div>
-    </div>
-  </div>
+      </section>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    </div>
+
+    <footer class="site-footer">
+      <p>This site was made in the spirit of <a href="https://github.com/BTZCalculator/BTZCalculator.github.io">open source</a> hosted on <a href="https://github.com/">Github</a>. You can stalk me on <a href="https://www.linkedin.com/in/kevinfalting/">LinkedIn</a>. <a href="https://www.youtube.com/watch?v=xCISDpKuaIE">Stay cool.</a></p>
+      <div class="footer-cols">
+        <div>
+          <p>Please direct any questions or comments to: <a href="mailto:kevinfalting@gmail.com">kevinfalting@gmail.com</a></p>
+          <p>Or you can <a href="https://github.com/kevinfalting/BTZCalculator.github.io/issues">file an issue</a> on Github to let me know what can be improved. 👍</p>
+        </div>
+        <div>
+          <p>Where did I get the information for the calculator?<br>Well... I read the AFI, yo. <a href="https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf">AFI 36-2502</a>.</p>
+          <p>Also, some bases have their own supplement to the AFI, which may alter the rules in some cases. You can find those supplements <a href="https://www.e-publishing.af.mil/Product-Index/#/?view=search&keyword=AFI36-2502&isObsolete=false">here</a>. <a href="https://github.com/kevinfalting/BTZCalculator.github.io/issues">Open an issue</a> if your base uses a different calculation and we'll get it incorporated into this calculator.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
 
   <script src="js/btz.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/calculator.js"></script>
-
- <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79613201-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-79613201-2');
-  </script>
-  <!-- End Google Analytics -->
 </body>
 </html>
