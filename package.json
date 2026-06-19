@@ -1,0 +1,9 @@
+{
+  "name": "btz-calculator",
+  "version": "1.0.0",
+  "description": "USAF BTZ Calculator",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}

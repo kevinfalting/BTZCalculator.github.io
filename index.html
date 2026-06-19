@@ -42,11 +42,11 @@
     <div class="row">
       <div class="five columns offset-by-one">
         <label for="enlistmentDate">When did you enter the Air Force?</label>
-        <input id="enlistmentDate" type="date" onchange="calculate()">
+        <input id="enlistmentDate" type="date">
         <label for="a1cDate">What is your date of rank for A1C?</br><span style='color: grey; font-size: 0.75em;'>If you don't know, check your SURF or vMPF.</span></label>
-        <input id="a1cDate" type="date" onchange="calculate()">
+        <input id="a1cDate" type="date">
         <div id="error"></div>
-        <button type="button" onclick="calculate()">Calculate</button>
+        <button type="button" id="calculateButton">Calculate</button>
       </div>
       <div class="five columns">
         <h5>Projected Promotion Dates</h5>
@@ -58,7 +58,7 @@
     <hr>
     <div class="row">
       <div class="ten columns offset-by-one">
-        <p>This site was made in the spirit of <a href="https://github.com/BTZCalculator/BTZCalculator.github.io">open source</a> hosted on <a href="https://github.com/">Github</a>, uses <a href="http://getskeleton.com/">Skeleton</a> for styling, and <a href="https://momentjs.com/">Moment.js</a> for time calculations. You can stalk me on <a href="https://www.linkedin.com/in/kevinfalting/">LinkedIn</a>. <a href="https://www.youtube.com/watch?v=xCISDpKuaIE">Stay cool.</a></p>
+        <p>This site was made in the spirit of <a href="https://github.com/BTZCalculator/BTZCalculator.github.io">open source</a> hosted on <a href="https://github.com/">Github</a> and uses <a href="http://getskeleton.com/">Skeleton</a> for styling. You can stalk me on <a href="https://www.linkedin.com/in/kevinfalting/">LinkedIn</a>. <a href="https://www.youtube.com/watch?v=xCISDpKuaIE">Stay cool.</a></p>
       </div>
     </div>
     <div class="row">
@@ -76,7 +76,7 @@
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <script src="js/moment.js"></script>
+  <script src="js/btz.js"></script>
   <script src="js/calculator.js"></script>
 
  <!-- Global site tag (gtag.js) - Google Analytics -->
