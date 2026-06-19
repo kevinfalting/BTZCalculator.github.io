@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('enlistmentDate').addEventListener('change', calculate);
   document.getElementById('a1cDate').addEventListener('change', calculate);
-  document.getElementById('calculateButton').addEventListener('click', calculate);
 
   setupThemeToggle();
   calculate();
