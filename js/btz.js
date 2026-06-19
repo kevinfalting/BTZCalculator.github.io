@@ -8,7 +8,9 @@
 // Parse a "YYYY-MM-DD" string into a Date at local midnight.
 // Returns null for empty, malformed, or out-of-range input.
 function parseLocalDate(str) {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str ?? '');
+  // Year is \d{4,}: HTML date inputs permit years beyond 9999, but require
+  // at least 4 digits, matching the "YYYY-MM-DD" format.
+  const match = /^(\d{4,})-(\d{2})-(\d{2})$/.exec(str ?? '');
   if (!match) return null;
 
   const year = Number(match[1]);

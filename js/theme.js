@@ -15,6 +15,10 @@ function nextThemeChoice(current) {
 }
 
 // --- Browser-only helpers (skipped under Node) ------------------------------
+//
+// NOTE: the inline pre-paint script in index.html duplicates the storage key
+// ('theme'), the accepted values ('dark'/'light'), and the data-theme attribute
+// used below (it must run before this file loads). Keep them in sync.
 
 // The user's stored choice, or 'system' when none is saved.
 function storedThemeChoice() {

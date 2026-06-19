@@ -13,7 +13,10 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <!-- Apply a saved theme choice before first paint to avoid a flash.
-       If nothing is saved, the page follows the OS preference (CSS). -->
+       If nothing is saved, the page follows the OS preference (CSS).
+       This MUST run before js/theme.js loads, so it intentionally duplicates
+       theme.js's storage key ('theme'), values ('dark'/'light'), and the
+       data-theme attribute. Keep this block in sync with js/theme.js. -->
   <script>
     (function () {
       try {

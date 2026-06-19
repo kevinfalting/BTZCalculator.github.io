@@ -38,6 +38,14 @@ test('parseLocalDate returns null for an out-of-range date', () => {
   assert.equal(parseLocalDate('2024-13-45'), null);
 });
 
+test('parseLocalDate accepts years beyond 4 digits (HTML date inputs allow them)', () => {
+  assertYMD(parseLocalDate('10000-01-01'), 10000, 0, 1);
+});
+
+test('parseLocalDate still rejects years shorter than 4 digits', () => {
+  assert.equal(parseLocalDate('999-01-01'), null);
+});
+
 test('addMonths adds whole months', () => {
   assertYMD(addMonths(new Date(2024, 0, 15), 36), 2027, 0, 15);
 });
