@@ -352,6 +352,13 @@ input[type="date"]:focus-visible {
   }
 }
 
+.last-updated {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 a {
   color: var(--accent);
 }
