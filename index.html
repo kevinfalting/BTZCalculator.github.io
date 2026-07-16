@@ -63,6 +63,40 @@
 
     </div>
 
+    <section class="card bulk-card">
+      <p>Have a roster of Airmen? Upload a CSV to calculate everyone at once, entirely in the browser.</p>
+
+      <div class="bulk-controls">
+        <label for="bulkFile" id="bulkDropzone" class="bulk-dropzone">
+          <input type="file" id="bulkFile" class="bulk-file-input" accept=".csv,text/csv">
+          <span id="bulkDropzoneText">Drop a CSV here, or click to browse</span>
+        </label>
+        <div class="bulk-buttons">
+          <button type="button" id="bulkTemplate" class="btn-secondary">Download template CSV</button>
+          <button type="button" id="bulkDownload" class="btn-secondary" hidden>Download results CSV</button>
+        </div>
+      </div>
+
+      <div id="bulkMapping" class="bulk-mapping" hidden>
+        <p class="bulk-mapping-title">Confirm which columns to use:</p>
+        <div class="bulk-mapping-fields">
+          <label class="bulk-mapping-field">
+            Enlistment Date
+            <select id="bulkColEnlistment"></select>
+            <span id="bulkColEnlistmentFlag" class="bulk-flag" hidden></span>
+          </label>
+          <label class="bulk-mapping-field">
+            A1C Date
+            <select id="bulkColA1c"></select>
+            <span id="bulkColA1cFlag" class="bulk-flag" hidden></span>
+          </label>
+        </div>
+      </div>
+
+      <p id="bulkStatus" class="bulk-status"></p>
+      <div id="bulkTableWrap" class="bulk-table-wrap"></div>
+    </section>
+
     <footer class="site-footer">
       <p>This site was made in the spirit of <a href="https://github.com/BTZCalculator/BTZCalculator.github.io">open source</a> hosted on <a href="https://github.com/">Github</a>. You can stalk me on <a href="https://www.linkedin.com/in/kevinfalting/">LinkedIn</a>. <a href="https://www.youtube.com/watch?v=xCISDpKuaIE">Stay cool.</a></p>
       <div class="footer-cols">
@@ -80,7 +114,9 @@
   </main>
 
   <script src="js/btz.js"></script>
+  <script src="js/csv.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/calculator.js"></script>
+  <script src="js/bulk.js"></script>
 </body>
 </html>

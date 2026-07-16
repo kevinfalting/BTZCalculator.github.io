@@ -93,7 +93,7 @@ function computeBTZDates(enlistmentStr, a1cStr) {
   const a1c = parseLocalDate(a1cStr);
 
   if (!enlistment || !a1c) {
-    return { error: 'Oops, make sure you typed in the dates correctly.' };
+    return { error: 'Enter valid enlistment and A1C dates.' };
   }
   if (a1c < enlistment) {
     return { error: 'You cannot sew on A1C before your Enlistment Date.' };
