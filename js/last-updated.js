@@ -10,8 +10,9 @@ function formatUpdatedAt(date) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    hour: 'numeric',
+    hour: '2-digit',
     minute: '2-digit',
+    hourCycle: 'h23',
     timeZone: 'UTC',
   }).format(date);
   return `${formatted} UTC`;
